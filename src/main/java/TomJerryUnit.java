@@ -15,20 +15,9 @@
  * the attributes of the unit.
  **/
 
-public class TomJerryUnit {
+public class TomJerryUnit extends Unit {
     // initializing variables
 
-    private char symbol;
-    private String name;
-    private double health;
-    private double healthModifier;
-    private double damage;
-    private double damageModifier;
-    private int luck;
-    private int xCor;
-    private int yCor;
-    private int movement;
-    private int movementModifier;
     private boolean homingRocket;
     private boolean offerCheese;
     private boolean hiding;
@@ -36,18 +25,9 @@ public class TomJerryUnit {
     // constructor with parameters
     public TomJerryUnit(char symbol, String name, double health, double healthModifier, double damage, double damageModifier,
                         int luck, int xCor, int yCor, int movement, int movementModifier, boolean homingRocket,
-                        boolean offerCheese, boolean hiding) {
-        this.symbol = symbol;
-        this.name = name;
-        this.health = health;
-        this.healthModifier = healthModifier;
-        this.damage = damage;
-        this.damageModifier = damageModifier;
-        this.luck = luck;
-        this.xCor = xCor;
-        this.yCor = yCor;
-        this.movement = movement;
-        this.movementModifier = movementModifier;
+                        boolean offerCheese, boolean hiding, String teamColor) {
+        super(symbol, name, health, healthModifier, damage, damageModifier, luck, xCor,
+                yCor, movement, movementModifier, teamColor);
         this.homingRocket = homingRocket;
         this.offerCheese = offerCheese;
         this.hiding = hiding;
@@ -55,54 +35,11 @@ public class TomJerryUnit {
 
     public TomJerryUnit() {
         this('T', "Tom & Jerry", 100.0, 0.0, 25.0, 0.0, 0,
-                5, 5,1, 0, true, true, false);
+                5, 5,1, 0, true, true,
+                false, "Default Team");
     }
-
 
     // ACCESSOR/GET METHODS
-    public char getSymbol() {
-        return this.symbol;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public double getHealth() {
-        return this.health;
-    }
-
-    public double getHealthModifier() {
-        return this.healthModifier;
-    }
-
-    public double getDamage() {
-        return this.damage;
-    }
-
-    public double getDamageModifier() {
-        return this.damageModifier;
-    }
-
-    public int getLuck() {
-        return this.luck;
-    }
-
-    public int getxCor() {
-        return this.xCor;
-    }
-
-    public int getyCor() {
-        return this.yCor;
-    }
-
-    public int getMovement() {
-        return movement;
-    }
-
-    public int getMovementModifier() {
-        return movementModifier;
-    }
 
     public boolean canHomingRocket() {
         return homingRocket;
@@ -118,49 +55,7 @@ public class TomJerryUnit {
 
 
     // MUTATOR/SET METHODS
-    public void setSymbol(char symbol) {
-        this.symbol = symbol;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
-    public void setHealthModifier(double healthModifier) {
-        this.healthModifier = healthModifier;
-    }
-
-    public void setDamage(double damage) {
-        this.damage = damage;
-    }
-
-    public void setDamageModifier(double damageModifier) {
-        this.damageModifier = damageModifier;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
-
-    public void setxCor(int xCor) {
-        this.xCor = xCor;
-    }
-
-    public void setyCor(int yCor) {
-        this.yCor = yCor;
-    }
-
-    public void setMovement(int movement) {
-        this.movement = movement;
-    }
-
-    public void setMovementModifier(int movementModifier) {
-        this.movementModifier = movementModifier;
-    }
 
     public void setHomingRocket(boolean homingRocket) {
         this.homingRocket = homingRocket;

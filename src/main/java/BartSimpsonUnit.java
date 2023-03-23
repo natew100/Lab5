@@ -12,20 +12,9 @@
  * including its health, damage, movement, luck, and more special abilities.
  **/
 
-public class BartSimpsonUnit {
+public class BartSimpsonUnit extends Unit{
     // initializing variables
 
-    private char symbol;
-    private String name;
-    private double health;
-    private double healthModifier;
-    private double damage;
-    private double damageModifier;
-    private int luck;
-    private int xCor;
-    private int yCor;
-    private int movement;
-    private int movementModifier;
     private int numTimesSpawned;
     private boolean distract;
     private boolean recruit;
@@ -37,18 +26,9 @@ public class BartSimpsonUnit {
     // constructor with parameters
     public BartSimpsonUnit(char symbol, String name, double health, double healthModifier, double damage, double damageModifier,
                            int luck, int xCor, int yCor, int movement, int movementModifier, int numTimesSpawned,
-                           boolean distract, boolean recruit) {
-        this.symbol = symbol;
-        this.name = name;
-        this.health = health;
-        this.healthModifier = healthModifier;
-        this.damage = damage;
-        this.damageModifier = damageModifier;
-        this.luck = luck;
-        this.xCor = xCor;
-        this.yCor = yCor;
-        this.movement = movement;
-        this.movementModifier = movementModifier;
+                           boolean distract, boolean recruit, String teamColor) {
+        super(symbol, name, health, healthModifier, damage, damageModifier, luck, xCor,
+                yCor, movement, movementModifier, teamColor);
         this.numTimesSpawned = numTimesSpawned;
         this.distract = distract;
         this.recruit = recruit;
@@ -56,53 +36,12 @@ public class BartSimpsonUnit {
 
     public BartSimpsonUnit() {
         this('B', "Bart Simpson", 100.0, 0.0, 25.0, 0.0, 0,
-                5, 5, 1, 0, 0, true, true);
+                5, 5, 1, 0, 0, true,
+                true, "Default Team");
     }
 
     // ACCESSOR/GET METHODS
-    public char getSymbol() {
-        return symbol;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public double getHealth() {
-        return health;
-    }
-
-    public double getHealthModifier() {
-        return healthModifier;
-    }
-
-    public double getDamage() {
-        return damage;
-    }
-
-    public double getDamageModifier() {
-        return damageModifier;
-    }
-
-    public int getLuck() {
-        return luck;
-    }
-
-    public int getxCor() {
-        return xCor;
-    }
-
-    public int getyCor() {
-        return yCor;
-    }
-
-    public int getMovement() {
-        return movement;
-    }
-
-    public int getMovementModifier() {
-        return movementModifier;
-    }
 
     public int getNumTimesSpawned() {
         return numTimesSpawned;
@@ -121,49 +60,6 @@ public class BartSimpsonUnit {
 
 
     // MUTATOR/SET METHODS
-    public void setSymbol(char symbol) {
-        this.symbol = symbol;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
-    public void setHealthModifier(double healthModifier) {
-        this.healthModifier = healthModifier;
-    }
-
-    public void setDamage(double damage) {
-        this.damage = damage;
-    }
-
-    public void setDamageModifier(double damageModifier) {
-        this.damageModifier = damageModifier;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
-
-    public void setxCor(int xCor) {
-        this.xCor = xCor;
-    }
-
-    public void setyCor(int yCor) {
-        this.yCor = yCor;
-    }
-
-    public void setMovement(int movement) {
-        this.movement = movement;
-    }
-
-    public void setMovementModifier(int movementModifier) {
-        this.movementModifier = movementModifier;
-    }
 
     public void setNumTimesSpawned(int numTimesSpawned) {
         this.numTimesSpawned = numTimesSpawned;
@@ -199,7 +95,8 @@ public class BartSimpsonUnit {
                 1,
                 0,
                 true,
-                true);
+                true,
+                "Default Team");
         this.numTimesSpawned++;
         return newUnit;
     }
