@@ -34,7 +34,7 @@ class UnitTest {
     @Test
     public void test_TomJerryUnit() {
         System.out.println("Testing Tom & Jerry Unit Class");
-        Unit tj = new TomJerryUnit('a', "Test Name", 10.0, 5.0, 5.0,
+        Unit tj = new TomJerryUnit('a', "Test Name Tom", 10.0, 5.0, 5.0,
                 10.0, 5, 10, 15, 3, 5, false,
                 true, true, "Blue");
         // check inheritance
@@ -55,7 +55,9 @@ class UnitTest {
     @Test
     public void test_BartSimpsonUnit() {
         System.out.println("Testing Bart Simpson Unit Class");
-        BartSimpsonUnit bart = new BartSimpsonUnit(/*replace with arguments*/);
+        BartSimpsonUnit bart = new BartSimpsonUnit('a', "Test Name Bart", 15, 25.0,
+                5.0, 10.0, 5, 10, 15, 3, 5,
+                10, true, true, "Blue");
         assertTrue(bart instanceof Unit);
         try {
             // canRecruit should be implemented
