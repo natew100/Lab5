@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-02T22:44:47" hostname="wifi-roaming-128-4-135-176.wifi.udel.edu" time="0.06">
+<testsuite name="UnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-02T22:48:00" hostname="wifi-roaming-128-4-135-176.wifi.udel.edu" time="0.057">
   <properties/>
   <testcase name="test_BartSimpsonUnit()" classname="UnitTest" time="0.048"/>
-  <testcase name="test_Unit()" classname="UnitTest" time="0.003"/>
+  <testcase name="test_Unit()" classname="UnitTest" time="0.002"/>
   <testcase name="test_TomJerryUnit()" classname="UnitTest" time="0.002"/>
   <system-out><![CDATA[Testing Bart Simpson Unit Class
 Testing Unit Class

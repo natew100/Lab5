@@ -126,9 +126,15 @@ public abstract class Unit {
         this.movementModifier = movementModifier;
     }
 
+    public void setTeamColor(String red) {
+        this.teamColor = teamColor;
+    }
+
     // to string
     @Override
     public String toString() {
         return teamColor + " " + symbol;
     }
+
+
 }
