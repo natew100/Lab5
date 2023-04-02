@@ -21,6 +21,7 @@ public class TomJerryUnit extends Unit {
     private boolean homingRocket;
     private boolean offerCheese;
     private boolean hiding;
+    private int numTimesSpawned;
 
     // constructor with parameters
     public TomJerryUnit(char symbol, String name, double health, double healthModifier, double damage, double damageModifier,
@@ -87,5 +88,27 @@ public class TomJerryUnit extends Unit {
             System.out.println("Subtracted Damage");
             this.health -= damage;
         }
+    }
+
+    @Override
+    public TomJerryUnit spawn() {
+        TomJerryUnit newUnit = new TomJerryUnit(
+                't',
+                "Tom & Jerry",
+                100.0,
+                0.0,
+                25.0,
+                0.0,
+                0,
+                1,
+                1,
+                1,
+                0,
+                true,
+                true,
+                false,
+                this.getTeamColor());
+        numTimesSpawned++;
+        return newUnit;
     }
 }

@@ -1,7 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
 import java.lang.reflect.*;
-class UnitTest {
+
+public class UnitTest {
     @Test
     public void test_Unit() {
         // Unit has a constructor
@@ -9,34 +11,39 @@ class UnitTest {
         System.out.println("Testing Unit Class");
         try {
             Class<Unit> clazz = Unit.class;
-            Constructor<Unit> ctor = clazz.getDeclaredConstructor();
+            Constructor<Unit> ctor = clazz.getDeclaredConstructor(
+                    char.class,
+                    String.class,
+                    double.class, double.class,
+                    double.class, double.class,
+                    int.class, int.class, int.class,
+                    int.class,int.class,
+                    String.class);
             try {
                 ctor.newInstance();
                 fail("Should not be able to create an instance of Unit");
             } catch (Exception e) {
-            // should happen
+                // should happen
             }
             System.out.println("Testing Unit Constructor passes");
-            // takeDamage should not be implemented in the Unit class
-            Method m = clazz.getDeclaredMethod("takeDamage", double.class);
-            assertEquals(void.class, m.getReturnType());
+            // spawn should not be implemented in the Unit class
+
+            // speak should not be implemented in the Piece class
+            Method m = clazz.getDeclaredMethod("spawn", new Class[]{});
+            assertEquals(Unit.class, m.getReturnType());
             assertTrue(Modifier.isAbstract(m.getModifiers()));
-            // canRecruit should not be implemented in the Unit class
-            m = clazz.getDeclaredMethod("canRecruit", new Class[]{});
-            assertEquals(boolean.class, m.getReturnType());
-            assertTrue(Modifier.isAbstract(m.getModifiers()));
+
         } catch (Exception e) {
             // not supposed to happen
             e.printStackTrace();
             fail(e.getMessage());
         }
     }
+
     @Test
     public void test_TomJerryUnit() {
         System.out.println("Testing Tom & Jerry Unit Class");
-        Unit tj = new TomJerryUnit('a', "Test Name Tom", 10.0, 5.0, 5.0,
-                10.0, 5, 10, 15, 3, 5, false,
-                true, true, "Blue");
+        Unit tj = new TomJerryUnit();
         // check inheritance
         assertTrue(tj instanceof Unit);
         try {
@@ -44,27 +51,26 @@ class UnitTest {
             Method m = TomJerryUnit.class.getDeclaredMethod("takeDamage",
                     double.class);
             assertEquals(void.class, m.getReturnType());
-            assertTrue(Modifier.isAbstract(m.getModifiers()));
+            assertFalse(Modifier.isAbstract(m.getModifiers()));
         } catch (Exception e) {
-            System.out.println("in here");
             // not supposed to happen
             e.printStackTrace();
             fail(e.getMessage());
         }
     }
+
     @Test
     public void test_BartSimpsonUnit() {
         System.out.println("Testing Bart Simpson Unit Class");
-        BartSimpsonUnit bart = new BartSimpsonUnit('a', "Test Name Bart", 15, 25.0,
-                5.0, 10.0, 5, 10, 15, 3, 5,
-                10, true, true, "Blue");
+        BartSimpsonUnit bart = new BartSimpsonUnit();
         assertTrue(bart instanceof Unit);
         try {
             // canRecruit should be implemented
-            Method m = BartSimpsonUnit.class.getDeclaredMethod("canRecruit", new Class[]{});
+            Method m = BartSimpsonUnit.class.getDeclaredMethod("canRecruit", new
+                    Class[]{});
             assertEquals(boolean.class, m.getReturnType());
-            assertTrue(Modifier.isAbstract(m.getModifiers()));
-        } catch (Exception e) {
+                assertFalse(Modifier.isAbstract(m.getModifiers()));
+            } catch (Exception e) {
             // not supposed to happen
             e.printStackTrace();
             fail(e.getMessage());

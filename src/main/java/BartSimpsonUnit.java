@@ -12,7 +12,7 @@
  * including its health, damage, movement, luck, and more special abilities.
  **/
 
-public class BartSimpsonUnit extends Unit{
+public class BartSimpsonUnit extends Unit {
     // initializing variables
 
     private int numTimesSpawned;
@@ -54,6 +54,7 @@ public class BartSimpsonUnit extends Unit{
     public boolean canRecruit() {
         return recruit;
     }
+
     public boolean canSpawn() {
         return (numTimesSpawned == 0 && MAX_NUM_SPAWNED > 0);
     }

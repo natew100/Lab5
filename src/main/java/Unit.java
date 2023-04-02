@@ -28,7 +28,10 @@ public abstract class Unit {
         this.teamColor = teamColor;
     }
 
+
+
     // GETTERS
+    public abstract Unit spawn();
 
     public char getSymbol() {
         return this.symbol;
