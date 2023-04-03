@@ -29,7 +29,6 @@ public abstract class Unit {
     }
 
 
-
     // GETTERS
     public abstract Unit spawn();
 
@@ -126,7 +125,7 @@ public abstract class Unit {
         this.movementModifier = movementModifier;
     }
 
-    public void setTeamColor(String red) {
+    public void setTeamColor(String teamColor) {
         this.teamColor = teamColor;
     }
 
@@ -135,6 +134,4 @@ public abstract class Unit {
     public String toString() {
         return teamColor + " " + symbol;
     }
-
-
 }

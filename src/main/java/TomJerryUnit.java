@@ -73,7 +73,7 @@ public class TomJerryUnit extends Unit {
     // method that updates damage based on homing rocket
     public double dealDamage() {
         double totalDamage = this.damage + this.damageModifier;
-        if (canHomingRocket() == true) {
+        if (canHomingRocket()) {
             totalDamage = this.damage + this.damageModifier + 10.0;
         }
         return totalDamage;
@@ -81,7 +81,7 @@ public class TomJerryUnit extends Unit {
 
     // method that updates damage if not hiding
     public void takeDamage(double damage) {
-        if (isHiding() == true) {
+        if (isHiding()) {
             System.out.println("No Damage Subtracted");
         }
         else {
@@ -107,7 +107,7 @@ public class TomJerryUnit extends Unit {
                 true,
                 true,
                 false,
-                this.getTeamColor());
+                "Default Color");
         numTimesSpawned++;
         return newUnit;
     }

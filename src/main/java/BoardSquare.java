@@ -35,7 +35,7 @@ public class BoardSquare {
 
     @Override
     public String toString() {
-        if (isEmpty() == true) {
+        if (isEmpty()) {
             return "-------";
         }
         else {
