@@ -22,14 +22,16 @@ class Team{
         return units;
     }
 
-    //2 mutator methods
+    /**2 mutator methods, they add and remove units from team, and
+     * in the case of adding, it also changes the unit color to the team color
+     */
     public void removeUnitsFromTeam(Unit newUnit) {
         this.units.remove(newUnit);
     }
     public void addUnitsToTeam(Unit newUnit) {
         this.units.add(newUnit);
-        String placeholder = getTeamColor();
-        newUnit.teamColor = placeholder;
+        String swapColor = getTeamColor();
+        newUnit.teamColor = swapColor;
     }
 
     //override toString
