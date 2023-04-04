@@ -28,17 +28,25 @@ class Team{
     }
     public void addUnitsToTeam(Unit newUnit) {
         this.units.add(newUnit);
+        String placeholder = getTeamColor();
+        newUnit.teamColor = placeholder;
     }
 
     //override toString
     @Override
-    public String toString() {
+    public String toString()
+    {
         String output = "Team " + this.color + " Units:\n";
         for(Unit testUnit:units)
         {
-            output = output + this.color + " " + testUnit + " ";
+            output = output + testUnit + " ";
         }
         return output;
+    }
+
+    public static void main(String args[])
+    {
+
     }
 
 }
