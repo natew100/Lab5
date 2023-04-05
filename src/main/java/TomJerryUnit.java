@@ -129,6 +129,20 @@ public class TomJerryUnit extends Unit {
         }
     }
 
+
+    /**
+     * Deals amount of damage based on if homing rocket is enabled or not
+     *
+     * @return a double representing the new total amount of damage
+     */
+    public double dealDamage() {
+        double totalDamage = this.damage + this.damageModifier;
+        if (canHomingRocket()) {
+            totalDamage = this.damage + this.damageModifier + 10.0;
+        }
+        return totalDamage;
+    }
+
     /**
      * Spawns a new TomJerryUnit with default properties.
      *
@@ -155,4 +169,5 @@ public class TomJerryUnit extends Unit {
         numTimesSpawned++;
         return newUnit;
     }
+
 }
