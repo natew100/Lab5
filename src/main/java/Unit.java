@@ -124,7 +124,7 @@ public abstract class Unit {
 
     /**
      * Sets the x coordinate of the unit.
-     * @param xCor an integer representing the x coordinate of the unit.
+     * @return an integer representing the y coordinate of the unit.
      */
     public int getxCor() {
         return this.xCor;

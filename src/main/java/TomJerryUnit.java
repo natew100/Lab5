@@ -169,5 +169,4 @@ public class TomJerryUnit extends Unit {
         numTimesSpawned++;
         return newUnit;
     }
-
 }
