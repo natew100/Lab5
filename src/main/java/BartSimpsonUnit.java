@@ -75,7 +75,7 @@ public class BartSimpsonUnit extends Unit {
     }
 
     public void distracted() {
-        if (canDistract() == true) {
+        if (canDistract()) {
             System.out.println("Unit Distracted!");
         }
     }

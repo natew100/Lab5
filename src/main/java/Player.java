@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * <h1>Lab4</h1>
  * <h2>CISC 181-020L Spring 2023</h2>
@@ -15,27 +17,27 @@ public class Player {
     //3 fields (attributes/properties)
     private int playerNumber;
     private boolean turn;
-    private TomJerryUnit unit;
+    private Team team;
 
     //3 parameter constructor
-    public Player(int playerNumber, boolean turn, TomJerryUnit unit) {
+    public Player(int playerNumber, boolean turn, Team team) {
         this.playerNumber = playerNumber;
         this.turn = turn;
-        this.unit = unit;
+        this.team = team;
     }
 
     //2 parameter constructor
-    public Player(int playerNumber, TomJerryUnit unit) {
+    public Player(int playerNumber, Team team) {
         this.playerNumber = playerNumber;
         this.turn = false;
-        this.unit = unit;
+        this.team = team;
     }
 
     //0 parameter constructor
     public Player() {
         this.playerNumber = 0;
         this.turn = false;
-        this.unit = new TomJerryUnit();
+        this.team = new Team("", new ArrayList<Unit>());
     }
 
     //Accessor methods
@@ -43,12 +45,13 @@ public class Player {
         return playerNumber;
     }
 
+
     public boolean isTurn() {
         return turn;
     }
 
-    public TomJerryUnit getUnit() {
-        return unit;
+    public Team getPlayersTeam() {
+        return team;
     }
 
     //Mutator methods
@@ -60,7 +63,7 @@ public class Player {
         this.turn = turn;
     }
 
-    public void setUnit(TomJerryUnit unit) {
-        this.unit = unit;
+    public void setPlayersTeam(Team team) {
+        this.team = team;
     }
 }

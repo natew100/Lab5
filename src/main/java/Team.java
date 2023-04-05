@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 class Team {
-
     // member fields for color and units
     private final String color;
     private ArrayList<Unit> units = new ArrayList<Unit>();
@@ -37,11 +36,11 @@ class Team {
     @Override
     public String toString()
     {
-        String output = "Team " + this.color + " Units:\n";
+        StringBuilder output = new StringBuilder("Team " + this.color + " Units:\n");
         for(Unit testUnit:units)
         {
-            output = output + testUnit + " ";
+            output.append(testUnit).append(" ");
         }
-        return output;
+        return output.toString();
     }
 }

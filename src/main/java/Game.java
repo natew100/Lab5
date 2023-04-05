@@ -5,19 +5,18 @@ public class Game {
     private Player player1;
     private Player player2;
 
-    private void initializeGameBoard(int numRows, int numColumns) {
-        board = new GameBoard(numRows, numColumns);
-
-    }
-
-
-    public Game(int numRows, int numColumns, Player player1, Player player2) {
+    Game(int numRows, int numColumns, Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
         initializeGameBoard(numRows, numColumns);
     }
 
-    public GameBoard getGameBoard() {
+    private void initializeGameBoard(int numRows, int numColumns) {
+        board = new GameBoard(numRows, numColumns);
+
+    }
+
+    public GameBoard getBoard() {
         return board;
     }
 
