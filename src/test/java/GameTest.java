@@ -5,12 +5,12 @@ public class GameTest {
     @Test
     public void gameTests() throws Exception {
         System.out.println("Testing Game");
-// Create 2 Units for team A
+        // Create 2 Units for team A
         Unit blueTJ = new TomJerryUnit();
         blueTJ.setTeamColor("Blu");
         Unit blueBart = new BartSimpsonUnit();
         blueBart.setTeamColor("Blu");
-// Load the Units in an ArrayList
+        // Load the Units in an ArrayList
         ArrayList<Unit> UnitsTeamA = new ArrayList<Unit>();
         UnitsTeamA.add(blueTJ);
         UnitsTeamA.add(blueBart);
@@ -18,12 +18,12 @@ public class GameTest {
         p1.setTurn(true);
         Team teamA = new Team("Blu", UnitsTeamA);
         p1.setPlayersTeam(teamA);
-// Create 2 Units for team B
+        // Create 2 Units for team B
         Unit redTJ = new TomJerryUnit();
         redTJ.setTeamColor("Red");
         Unit redBart = new BartSimpsonUnit();
         redBart.setTeamColor("Red");
-// Load the Units in an ArrayList
+        // Load the Units in an ArrayList
         ArrayList<Unit> UnitsTeamB = new ArrayList<Unit>();
         UnitsTeamB.add(redTJ);
         UnitsTeamB.add(redBart);
