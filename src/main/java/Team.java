@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-class Team{
+class Team {
 
-    //member fields for color and units
-    private String color;
+    // member fields for color and units
+    private final String color;
     private ArrayList<Unit> units = new ArrayList<Unit>();
 
-    //make a 2 parameter constructor
+    // make a 2 parameter constructor
     public Team(String color, ArrayList<Unit> units) {
         super();
         this.color = color;
@@ -30,11 +30,10 @@ class Team{
     }
     public void addUnitsToTeam(Unit newUnit) {
         this.units.add(newUnit);
-        String swapColor = getTeamColor();
-        newUnit.teamColor = swapColor;
+        newUnit.teamColor = getTeamColor();
     }
 
-    //override toString
+    // override toString
     @Override
     public String toString()
     {
@@ -45,10 +44,4 @@ class Team{
         }
         return output;
     }
-
-    public static void main(String args[])
-    {
-
-    }
-
 }
