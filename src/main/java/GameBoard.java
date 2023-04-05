@@ -37,6 +37,17 @@ public class GameBoard {
         }
     }
 
+    public BoardSquare findRandomEmptySpace() {
+        while (true) {
+            int row = (int) (Math.random() * numRows);
+            int column = (int) (Math.random() * numColumns);
+            BoardSquare square = squares[row][column];
+            if (square.isEmpty()) {
+                return square;
+            }
+        }
+    }
+
     public String toString(){
         StringBuilder boardString = new StringBuilder();
         boardString.append("Col :       ");
