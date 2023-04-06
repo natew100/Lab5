@@ -115,17 +115,18 @@ public class GameBoard {
      *
      * @return a string representation of the game board
      */
-    public String toString() {
+    public String toString(){
         StringBuilder boardString = new StringBuilder();
-        boardString.append("Col : ");
-        for (int col = 0; col < squares[0].length; col++) {
-            boardString.append(col + " ");
+        boardString.append("Col :       ");
+
+        for(int col = 0; col < squares[0].length; col++){
+            boardString.append(col + "        ");
         }
         boardString.append("\n");
-        for (int row = 0; row < squares.length; row++) {
-            boardString.append("Row : " + row + " ");
-            for (int col = 0; col < squares[row].length; col++) {
-                boardString.append("-------" + " ");
+        for(int row = 0; row < squares.length; row++){
+            boardString.append("Row : " + row + "   ");
+            for(int col = 0; col < squares[row].length; col++){
+                boardString.append(squares[row][col].toString() + "  ");
             }
             boardString.append("\n");
         }
